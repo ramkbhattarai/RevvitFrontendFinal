@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { forbiddenPasswordValidator } from '../../shared/password.validator';
 import { crossFieldPasswordValidator } from '../../shared/crossFieldPassword.validator';
 import { RegistrationService } from '../../services/registration.service';
-import { User } from '../../models/user/user';
+import { User } from '../../models/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,14 +28,14 @@ export class SignupComponent implements OnInit {
 
 
   handleSubmit() {
-    //console.log(this.registrationForm.value);
+    
     let formData = { ...this.registrationForm.value };
     delete formData.confirmPassword;
-    //console.log(formData);
+   
     this._register.register(formData).subscribe(
       (response: User) => {
         sessionStorage.setItem('currentUser', JSON.stringify(response));
-       // console.log(response);
+       
         this.router.navigate(['/home']);
       },
      // error => console.log("Error", error)
