@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfilesService } from './services/profiles.service';
 
 
 @NgModule({
@@ -14,15 +16,22 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    // added
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //added
+    ProfilesService
   ],
-  providers: [],
+  providers: [
+    // added 
+    ProfilesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
