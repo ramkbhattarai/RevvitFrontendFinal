@@ -2,7 +2,7 @@ export class User {
   id: number;
   fname: string;
   lname: string;
-  userName: string;
+  username: string;
   email: string;
   password: string;
   profilePicture: any;

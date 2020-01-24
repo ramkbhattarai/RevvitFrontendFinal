@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', Validators.required],
-    userName: ['', [Validators.required, Validators.minLength(5)]],
+    username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(4), forbiddenPasswordValidator(/pass/)]],
     confirmPassword: ['', Validators.required]
@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
        // console.log(response);
         this.router.navigate(['/home']);
       },
-      error => console.log("Error", error)
+     // error => console.log("Error", error)
     );
   }
 
