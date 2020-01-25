@@ -1,8 +1,17 @@
 <div class="navbar" routerLinkActive="navbar">
     <a class="btn btn-info" role="button" routerLink="/home" routerLinkActive="navbar-button">Home</a>
-    <a class="btn btn-info" role="button" routerLink="/signup" routerLinkActive="navbar-button">Sign Up</a>
-    <a class="btn btn-info" role="button" routerLink="/login" routerLinkActive="navbar-button">Log In</a>
+    <a class="btn btn-info" role="button" routerLink="/profile" routerLinkActive="navbar-button">Profile</a>
     <a class="btn btn-info" role="button" routerLink="/revvit" routerLinkActive="navbar-button">New Revvit</a>
+    <a class="btn btn-info" role="button" routerLink="/twitter" routerLinkActive="navbar-button">Twitter</a>
     <button class="btn btn-primary" (click)="handleLogOut()">Log out</button>
 
 </div>
+
+
+    <div *ngFor="let r of allRevvits">
+        <div>
+            <div>{{r.author.fname}}</div>
+            <div>{{r.text}}</div>
+        </div>
+    </div>
+

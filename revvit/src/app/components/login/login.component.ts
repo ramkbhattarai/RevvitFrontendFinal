@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
     this._login.login(this.loginForm.value).subscribe(
       (response: User) => {
-        console.log(`response after login = currentUser in apply mode is ${response}`);
+        //console.log(`response after login = currentUser in apply mode is ${response}`);
         if (response.id) {
           sessionStorage.setItem('currentUser', JSON.stringify(response));
           this.router.navigate(['/home']);

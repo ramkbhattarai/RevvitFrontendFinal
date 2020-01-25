@@ -3,4 +3,5 @@ export class Revvit {
     id: number;
     text: string;
     author: User;
+    
 }

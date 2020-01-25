@@ -8,6 +8,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RevvitComponent } from './components/revvit/revvit.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { TwitterComponent } from './components/twitter/twitter.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { RevvitComponent } from './components/revvit/revvit.component';
     SignupComponent,
     LoginComponent,
     HomeComponent,
-    RevvitComponent
+    RevvitComponent,
+    ProfileComponent,
+    TwitterComponent
   ],
   imports: [
     BrowserModule,
