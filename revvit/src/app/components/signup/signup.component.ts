@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
 
   handleSubmit() {
     
-    let formData = { ...this.registrationForm.value };
+    let formData = { ...this.registrationForm.value};
     delete formData.confirmPassword;
    
     this._register.register(formData).subscribe(

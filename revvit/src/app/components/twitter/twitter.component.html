@@ -1,1 +1,33 @@
-<p>twitter works!</p>
+<section id="banner">
+    <h2>Whats happening on <strong>Twitter?</strong></h2>
+    <ul class="actions">
+        <p>Here, you can see tweets from your favorite accounts straight from twitter</p>
+        <p>Choose who Revvit users follow on Twitter as a community!</p>
+    </ul>
+</section>
+<div *ngFor="let tweets of allTweets">
+    <div>
+        <div>{{tweets.username}}</div>
+        <div>{{tweets.text}}</div>
+        <div>
+            <img [src]="tweets.author.photoUrl" />
+        </div>
+        <div><span>Likes {{tweets.likecount}}</span><span> ReRevvits {{tweets.rerevcount}}</span></div>
+    </div>
+</div>
+
+<div id="touch">
+    <p><strong>Get in touch!</strong></p>
+    <p>Enter the username of the twitter account you would like to follow</p>
+</div>
+<div id="two" class="wrapper style2 special">
+    <div class="inner narrow">
+        <form class="grid-form" [formGroup]="twitterForm" (ngSubmit)="handleSubmit()">
+            <div class="form-control narrow">
+                <label for="name">@Username</label>
+                <input formControlName="username" id="name" type="text"/>
+            </div>
+            <button type="submit">Follow On Twitter</button>
+        </form>
+    </div>
+</div>

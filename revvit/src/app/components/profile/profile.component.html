@@ -10,6 +10,9 @@
         <div>
             <div>{{r.author.fname}}</div>
             <div>{{r.text}}</div>
+            <div>
+                <img [src]=""/>
+            </div>
             <div><span>Likes {{r.likedBy.length}}</span><span> ReRevvits {{r.reRevvitedBy.length}}</span></div>
             <button (click)="handleDelete(r)">Delete</button>
         </div>
