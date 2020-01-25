@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Profile } from 'src/app/models/profile';
 import { User } from 'src/app/models/user';
+import { Revvit } from 'src/app/models/revvit';
+import { RevvitService } from 'src/app/services/revvit.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +10,14 @@ import { User } from 'src/app/models/user';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-  profile: Profile;
+  constructor(private _revvit: RevvitService) { }
   user: User;
-  isUser: boolean
+  allUserRevvits: Revvit[];
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem('currentUser'));
+    this._revvit.findAllOfUser(this.user).subscribe((response: Revvit[]) => {
+      console.log(response);
+      this.allUserRevvits = response;});
   }
 
 }
