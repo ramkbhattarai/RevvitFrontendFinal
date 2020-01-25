@@ -9,7 +9,8 @@ export class RevvitService {
 
   private _url: string = "/SpringMVCDemo/saveRevvit";
   private _nextUrl: string = "/SpringMVCDemo/revvits";
-  private _anotherUrl: string ="/SpringMVCDemo/revvitsAuthor"
+  private _anotherUrl: string ="/SpringMVCDemo/revvitsAuthor";
+  private _otherUrl: string="/SpringMVCDemo/deleteRevvit";
   headers = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -28,5 +29,9 @@ export class RevvitService {
 
   findAllOfUser(user){
     return this._http.post<any>(this._anotherUrl, JSON.stringify(user), this.headers);
+  }
+
+  delete(revvit){
+    return this._http.post<any>(this._otherUrl, JSON.stringify(revvit), this.headers );
   }
 }

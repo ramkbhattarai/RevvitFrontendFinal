@@ -20,4 +20,9 @@ export class ProfileComponent implements OnInit {
       this.allUserRevvits = response;});
   }
 
+  handleDelete(revvit){
+    this._revvit.delete(revvit).subscribe(
+      (response)=> {console.log(response);}
+    )
+  }
 }
