@@ -7,11 +7,12 @@
 </section>
 <div *ngFor="let tweets of allTweets">
     <div>
-        <div>{{tweets.username}}</div>
-        <div>{{tweets.text}}</div>
+        <div>{{tweets.author.username}}</div>
+        <div class="revvitText">{{tweets.text}}</div>
         <div>
             <img [src]="tweets.author.photoUrl" />
         </div>
+        <div class="revvitRevvit" style="font-size: 16px;"><button>&#x2672; {{r.reRevvitedBy.length}}</button></div>
         <div><span>Likes {{tweets.likecount}}</span><span> ReRevvits {{tweets.rerevcount}}</span></div>
     </div>
 </div>

@@ -1,18 +1,39 @@
-<div class="navbar" routerLinkActive="navbar">
-    <a class="btn btn-info" role="button" routerLink="/home" routerLinkActive="navbar-button">Home</a>
-    <a class="btn btn-info" role="button" routerLink="/profile" routerLinkActive="navbar-button">Profile</a>
-    <a class="btn btn-info" role="button" routerLink="/revvit" routerLinkActive="navbar-button">New Revvit</a>
-    <a class="btn btn-info" role="button" routerLink="/twitter" routerLinkActive="navbar-button">Twitter</a>
-    <button class="btn btn-primary" (click)="handleLogOut()">Log out</button>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-</div>
-
-
-    <div *ngFor="let r of allRevvits">
-        <div>
-            <div>{{r.author.fname}}</div>
-            <div>{{r.text}}</div>
-            <div><span>Likes {{r.likedBy.length}}</span><span>  ReRevvits {{r.reRevvitedBy.length}}</span></div>
-        </div>
+<body>
+   
+    <div class="navbar navbar-header" routerLinkActive="navbar">
+        <a class="btn btn-info" role="button" routerLink="/home" routerLinkActive="navbar-button">Home</a>
+        <a class="btn btn-info" role="button" routerLink="/profile" routerLinkActive="navbar-button">Profile</a>
+        <a class="btn btn-info" role="button" routerLink="/revvit" routerLinkActive="navbar-button">New Revvit</a>
+        <a class="btn btn-info" role="button" routerLink="/twitter" routerLinkActive="navbar-button">Twitter</a>
+        <button class="btn btn-primary" (click)="handleLogOut()">Log out</button>
     </div>
 
+    <div style= " background: #72eff1" class="jumbotron">
+        <h1 class="display-4">🐸Welcolme to Revvit!🐸</h1>
+        <p class="lead" id = "global">🌎Global Feed!🌎</p>
+        <hr class="my-4">
+        <p id = "revhead">Below you can see the tweets of all revvit users</p>
+   
+    </div>
+
+    <div class = "tweets" *ngFor="let r of allRevvits">
+        <div class="revvitContainer">
+            <div>@{{r.author.username}}</div>
+            <div class="revvitText">{{r.text}}</div>
+            <img [src]="r.author.profilePicture" style="width:80px; border-radius: 80%;">
+            <div class="container">
+                <div class="revvitRevvit" style="font-size: 16px;"><button>&#x2672; {{r.reRevvitedBy.length}}</button></div>
+                <div class="revvitLikes"><button (click)="handleLikes()"><i class="fa fa-heart" style="font-size:20px;color:red"></i></button> {{r.likedBy.length}}</div>
+            </div>
+        </div>
+    </div>
+</body>

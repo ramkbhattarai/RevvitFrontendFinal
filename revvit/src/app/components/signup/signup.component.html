@@ -58,6 +58,13 @@
             <small *ngIf="registrationForm.errors?.mismatch" class="text-danger">Password don't match</small>
            
         </div>
+
+        <div class="form-group">
+            <label for="">Profile Picture:</label>
+            <input [class.is-invalid]="registrationForm.errors?.mismatch" formControlName="profilePicture" type="text"
+                class="form-control">
+            <small *ngIf="registrationForm.errors?.mismatch" class="text-danger">Please provide the url of your picture</small>
+        </div>
         <button [disabled]="!registrationForm.valid" class="btn btn-primary">Sign Up</button>
     </form>
 </div>

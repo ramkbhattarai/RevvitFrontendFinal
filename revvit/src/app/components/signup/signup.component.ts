@@ -20,7 +20,8 @@ export class SignupComponent implements OnInit {
     username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(4), forbiddenPasswordValidator(/pass/)]],
-    confirmPassword: ['', Validators.required]
+    confirmPassword: ['', Validators.required],
+    profilePicture: ['']
   }, { validator: crossFieldPasswordValidator });
 
   ngOnInit() {
