@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <h3>Create Revvit</h3>
+    <form [formGroup]="revvitForm" (ngSubmit)="handleSubmit()">
+
+        <div class="form-group">
+            <label for="">What is it About?</label>
+
+            <input [class.is-invalid]="revvitForm.get('text').invalid && revvitForm.get('text').touched"
+                formControlName="text" type="text" class="form-control">
+            <div *ngIf="revvitForm.get('text').invalid && revvitForm.get('text').touched">
+                <small *ngIf="revvitForm.get('text').errors?.required" class="text-danger">Title is
+                    required</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">HashTags:</label>
+            <input formControlName="hashTags" type="text" class="form-control">
+        </div>
+        <button [disabled]="!revvitForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

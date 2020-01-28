@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private _http: HttpClient) { }
 
   login(userData) {
-    console.log(userData);
+    //console.log(userData);
     return this._http.post<any>(this._url, JSON.stringify(userData), this.headers);
   }
 }

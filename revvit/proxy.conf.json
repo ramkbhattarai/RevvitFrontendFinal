@@ -2,6 +2,10 @@
     "/SpringMVCDemo/*":{
         "target": "http://localhost:8080",
         "secure": false,
-        "changeOrigin": true
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/SpringMVCDemo": "http://localhost:8080/SpringMVCDemo"
+        }
     }
 }

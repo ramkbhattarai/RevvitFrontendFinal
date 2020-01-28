@@ -1,0 +1,47 @@
+<!-- 
+<div>
+    <img [src]="user.profilePicture" />
+    <h4>{{ user.username }}</h4>
+</div> -->
+
+<div style=" background: #72eff1" class="jumbotron">
+    <img [src]="user.profilePicture" style = "border-radius: 80%;"/>
+    <h1 class="display-4">Welcolme {{user.fname}} (@{{ user.username }})!</h1>
+    <p class="lead" id="global">🐸Your Feed🐸</p>
+    <hr class="my-4">
+    <p id="revhead">Below you'll only see your revvits</p>
+
+</div>
+
+<div>
+    <div *ngFor="let r of allUserRevvits">
+        <div>
+        <div class="revvitContainer">
+            <div>@{{r.author.username}}</div>
+            <div class="revvitText">{{r.text}}</div>
+            <img [src]="r.author.profilePicture" style="width:80px; border-radius: 80%;">
+            <div class="container">
+                <div class="revvitRevvit" style="font-size: 16px;"><button>&#x2672; {{r.reRevvitedBy.length}}</button></div>
+                <div class="revvitLikes"><button (click)="handleLikes()"><i class="fa fa-heart"
+                            style="font-size:20px;color:red"></i></button> {{r.likedBy.length}}</div>
+            </div>
+        </div>
+           
+           
+            <!-- <div>{{r.author.fname}}</div>
+            <div>{{r.text}}</div>
+            <div>
+                <img [src]=""/>
+            </div>
+            <div><span>Likes {{r.likedBy.length}}</span><span> ReRevvits {{r.reRevvitedBy.length}}</span></div> -->
+            <button (click)="handleDelete(r)">Delete</button>
+        </div>
+    </div>
+</div>
+
+               
+
+    
+
+
+
